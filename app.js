@@ -114,16 +114,10 @@ $('#'+question.city[1]).click(function(){
     
 });
         
-
-        
         
     }  
 };
     
-
-    
-    
-    
-    document.addEventListener("deviceready", APP.quiz.init); 
+   document.addEventListener("deviceready", APP.quiz.init); 
 })();
 
