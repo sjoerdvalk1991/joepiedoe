@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ <link href="style.css" rel="stylesheet" type="text/css">
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<input id="locationName" />
+<button id="saveData">Save</button>
+<script>
+window.onload = function () {
+
+    localStorage.removeItem('locname');
+    localStorage.removeItem('latitude');
+    localStorage.removeItem('longitude');
+
+    // Read value from storage, or empty array
+    var names = JSON.parse(localStorage.getItem('locname') || "[]");
+    var lat   = JSON.parse(localStorage.getItem('latitude') || "[]");
+    var long  = JSON.parse(localStorage.getItem('longitude') || "[]");
+
+    function initCoords() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(saveData);
+            console.log('This works');
+        } else {
+            showError("Your browser does not support Geolocation!");
+        }
+    }
+
+    function saveData(position) {
+        var data = document.getElementById("locationName").value;
+        names.push(data);
+        localStorage.setItem('locname', JSON.stringify(names));
+
+        var latitude = position.coords.latitude;
+        lat.push(latitude);
+        localStorage.setItem('latitude', JSON.stringify(lat));
+
+        var longitude = position.coords.longitude;
+        long.push(longitude);
+        localStorage.setItem('longitude', JSON.stringify(long));
+        console.log(lat, long)
+        window.location.replace("voorbeeld.html");
+    }
+
+    document.getElementById('saveData').onclick = initCoords;
+}
+
+window.onload(); // has to be triggered in jsFiddle
+    
+    
+</script>
+</body>
+</html>

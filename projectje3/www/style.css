@@ -1,0 +1,114 @@
+
+
+h1 {
+padding-top: 0.5em;
+padding-bottom:0.5em;
+text-align: center;
+font-size: 3em;
+color: #fff;
+font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+#yours{
+width: 100%;
+background-color: #4E9CAF; 
+
+}
+body {
+    color: #fff;
+    background-color: #f7f7ef;
+    margin: 0;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#names{
+    font-size: 4em;
+    background-color: #f7f7ef;
+    color: #333;
+    padding: 2em;
+
+}
+
+#locationname {
+ 
+    margin-top: 4em;
+}
+
+nav {
+
+    color: #fff;
+    background-color: #66ffcc;
+
+}
+
+#geolocation {
+    
+    display: none;
+}
+
+#next {
+
+padding: 5%;
+    
+}
+
+#next2 {
+
+padding: 5%;
+display: none;
+    
+}
+
+#next3 {
+
+padding: 5%;
+display: none;
+    
+}
+
+#check1 {
+padding-left: 20%;
+padding-top: 25%;
+
+}
+
+#volgende{
+
+display:none;
+padding: 5%;
+}
+
+#volgende2{
+
+display:none;
+padding: 5%;
+}
+
+.button {
+display: block;
+width: 400px;
+height: 80px;
+background: #4E9CAF;
+text-decoration: none;
+font-size: 2em;
+padding-top: 40px;
+padding-bottom: 40px;
+text-align: center;
+border-radius: 10px;
+color: white;
+    
+}
+
+#volgende3{
+
+display:none;
+}
+
+
+#result {
+
+color: #000;
+font-size: 2em;
+}
+
