@@ -1,3 +1,5 @@
+//Dit komt ook van Bart Simons dus naar hem gaan de credits voor de local storage.
+
 window.onload = function() {
 
 // Read value from storage, or empty array

@@ -9,6 +9,8 @@
 <button id="saveData" class="btn btn-danger">save</button>
     <div id='result'></div>
     <script>
+
+    //Credits gaan naar Bart Simons, voor zijn code voor de local storage, hier zijn we hem enorm dankbaar voor.
     window.onload = function () {
 
     // Read value from storage, or empty array
@@ -38,7 +40,7 @@
         long.push(longitude);
         localStorage.setItem('longitude', JSON.stringify(long));
         console.log(lat, long)
-        window.location.replace("voorbeeld.html");
+        window.location.replace("pijl.html");
     }
 
     document.getElementById('saveData').onclick = initCoords;
@@ -47,7 +49,7 @@
 }
     
 
-window.onload(); // has to be triggered in jsFiddle">Save</button>
+window.onload(); 
   
     
     </script>

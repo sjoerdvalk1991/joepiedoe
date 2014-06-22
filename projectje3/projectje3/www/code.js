@@ -1,4 +1,5 @@
-
+//deze code hoort bij het voorbeeld van de pijl
+//Hier hebben we zelf locaties aan toegevoegd voor het concept.
 var locaties = {};
 locaties['De Dam'] = {lat: "52.373094", lon: "4.892535"};
 locaties['Rijksmuseum'] = {lat: "52.3599347", lon: "4.8849932"};
