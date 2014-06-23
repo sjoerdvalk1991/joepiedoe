@@ -35,7 +35,7 @@ frequency: 1000
         },
     
         // onSuccess: Get the current heading
-        //
+        // if else statement beschrijven, wat doet het in welke situatie?
         onSuccess: function(heading) {
             this.magneticHeading = heading.magneticHeading;
             var element = document.getElementById('heading');
