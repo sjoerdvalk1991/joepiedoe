@@ -1,3 +1,6 @@
+//Deze code hebben we eerst gebruikt, maar uiteindelijk was het te lastig om dit te gebruiken in het concept.
+//De gebouwen van de HVA gaven bijvoorbeeld meerdere venues terug. (Theo thijssenhuis, HVA, CMDA etc.)
+
     var foursquaredata ;
 var url = "https://api.foursquare.com/v2/venues/search?ll="+position.coords.latitude+","+position.coords.longitude+"&query=&client_id=2POUFAUU4ZBJ2MTDOY3S2YHR2NIT52FYW0LUTPHBMNTJFJNQ&client_secret=YFDZI1YWV3ZI5S5SPM2DZJEQIEBPIDJ5XFZBWTIKIQZVQNYM&v=20120101";
 
