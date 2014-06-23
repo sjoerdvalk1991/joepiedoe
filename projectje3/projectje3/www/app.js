@@ -1,7 +1,8 @@
+var APP = APP || {}; 
+
 (function () {
 	'use strict';
     
-
     var sensors = {
         compass: null,
         geo: null
@@ -12,17 +13,28 @@
     
     
 
-	var controller = {
-		init: function () {
+	// var controller = {
+	// init: function () {
            
-            compass.startWatch();
-            //foursquare.search();
-            geo.startWatch();
-            geo.startgame(locaties);
-            navigator.splashscreen.hide();
-            },
+ //           compass.startWatch();
+ //           //foursquare.search();
+ //           geo.startWatch();
+ //           geo.startgame(locaties);
+ //           navigator.splashscreen.hide();
+ //           },
         
-    }
+ //   }
+ 
+ //	I would convert your Javascript to an OOP type
+ 	APP.controller = {
+ 		init: function () {
+            		compass.startWatch();
+            		//foursquare.search();
+            		geo.startWatch();
+            		geo.startgame(locaties);
+            		navigator.splashscreen.hide();
+            }
+ 	};
     
     var locaties = {
         locatie1: {
