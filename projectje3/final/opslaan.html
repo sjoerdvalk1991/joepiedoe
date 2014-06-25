@@ -1,0 +1,62 @@
+<!--code gekregen van bart om local storage te gebruiken voor locatie-->
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <head>
+    <link href="icomoon.css" rel="stylesheet" type="text/css">  
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="yours">
+            <h1 id="add"><a class="buttont" href="index.html"><i class="icon-home"></i></a>Add location</h1>
+        </div>
+    <input type="name" class="form-control" id="locationName" placeholder="Location name">
+    <button id="saveData" class="button2">save</button>
+    <div id='result'></div>
+    <script>
+    window.onload = function () {
+
+    // Read value from storage, or empty array
+    var names = JSON.parse(localStorage.getItem('locname') || "[]");
+    var lat   = JSON.parse(localStorage.getItem('latitude') || "[]");
+    var long  = JSON.parse(localStorage.getItem('longitude') || "[]");
+
+    function initCoords() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(saveData);
+            console.log('This works');
+        } else {
+            showError("Your browser does not support Geolocation!");
+        }
+    }
+
+    function saveData(position) {
+        var data = document.getElementById("locationName").value;
+        names.push(data);
+        localStorage.setItem('locname', JSON.stringify(names));
+
+        var latitude = position.coords.latitude;
+        lat.push(latitude);
+        localStorage.setItem('latitude', JSON.stringify(lat));
+
+        var longitude = position.coords.longitude;
+        long.push(longitude);
+        localStorage.setItem('longitude', JSON.stringify(long));
+        console.log(lat, long)
+        window.location.replace("voorbeeld.html");
+    }
+
+    document.getElementById('saveData').onclick = initCoords;
+    
+    
+}
+    
+
+    window.onload(); // has to be triggered in jsFiddle">Save</button>
+  
+    
+    </script>
+      </body>
+</html>
