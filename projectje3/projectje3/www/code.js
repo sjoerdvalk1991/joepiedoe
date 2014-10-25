@@ -1,3 +1,5 @@
+//Write your code OOP
+
 //deze code hoort bij het voorbeeld van de pijl
 //Hier hebben we zelf locaties aan toegevoegd voor het concept.
 var locaties = {};
@@ -7,6 +9,8 @@ locaties['Artis'] = {lat: "52.366265", lon: "4.9166406"};
 locaties['Dat fijne Hotel'] = {lat: "52.345864", lon: "4.918034"};
 locaties['Tropenmuseum'] = {lat: "52.3576569", lon: "4.9259487"};
 locaties['Station Amsterdam Zuid'] = {lat: "52.3421159", lon: "4.869446"};
+
+
 
 // Global variables.
 var destinationPosition;
@@ -18,7 +22,22 @@ var currentHeading;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-// heeft deze functie nut? 
+/*
+
+It is usefull and important, have a look in the Phonegap docs
+
+http://docs.phonegap.com/en/1.0.0/phonegap_events_events.md.html
+
+This is a very important event that every PhoneGap application should use.
+
+PhoneGap consists of two code bases: native and JavaScript. 
+While the native code is loading, a custom loading image is displayed. 
+However, JavaScript is only loaded once the DOM loads. 
+This means your web application could, potentially, call a PhoneGap JavaScript function before it is loaded.
+
+*/
+
+
 function onDeviceReady() {}
 
 function populateDests() {
@@ -79,7 +98,10 @@ function updateScreen(){
 
     destinationBearing = Math.round(currentPosition.bearingTo(destinationPosition));
     $('#distance').html(Math.round(currentPosition.distanceTo(destinationPosition)*1000) + " Meters");
-    $('#arrow').css("-webkit-transform", "rotate(" + degreesOfDiff + "deg)");
+    
+    //Use the addClass function
+    $('#arrow').addClass('rotateArrow');
+
 }
 
 // Error handler function.
